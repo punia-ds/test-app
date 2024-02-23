@@ -1,0 +1,44 @@
+{
+  "app": {
+    "TITLE": "English",
+    "SUBTITLE": "English Language",
+    "TABS": {
+      "HOME": "Home",
+      "DONATION": "Donation",
+      "MORE": "More"
+    },
+    "HOME": {
+      "TITLE": "English",
+      "DESCRIPTION": "This is the English version of the website. If you"
+    },
+    "DONATION": {
+      "TITLE": "Blood Donation",
+      "DESCRIPTION": "Donation"
+    },
+    "MANDI":"Mandis",
+    "MORE": {
+      "TITLE": "More",
+      "DESCRIPTION": "More",
+      "LISTS": {
+        "TITLE": "Settings",
+        "LANGUAGE": {
+          "TITLE": "Choose Language",
+          "VALUE": "en",
+          "SELECTED": "English (selected)",
+          "OK": "Ok",
+          "CANCEL": "Cancel",
+          "FIELDS": [
+            {
+              "name": "English",
+              "value": "en"
+            },
+            {
+              "name": "हिंदी",
+              "value": "hi"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

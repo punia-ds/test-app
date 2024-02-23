@@ -1,0 +1,44 @@
+{
+  "app": {
+    "TITLE": "हिंदी",
+    "SUBTITLE": "हिंदी भाषा",
+    "TABS": {
+      "HOME": "होम",
+      "DONATION": "दान",
+      "MORE": "अन्य"
+    },
+    "HOME": {
+      "TITLE": "हिंदी",
+      "DESCRIPTION": "यह हिंदी वेबसाइट में है. यदि"
+    },
+    "DONATION": {
+      "TITLE": "रक्त दान",
+      "DESCRIPTION": "दान"
+    },
+    "MANDI": "मंडी",
+    "MORE": {
+      "TITLE": "अन्य",
+      "DESCRIPTION": "अन्य",
+      "LISTS": {
+        "TITLE": "सेटिंग",
+        "LANGUAGE": {
+          "TITLE": "भाषा चुने",
+          "VALUE": "hi",
+          "SELECTED": "हिंदी (चुनी हुई)",
+          "OK": "बदल दे",
+          "CANCEL": "रहन दे",
+          "FIELDS": [
+            {
+              "name": "English",
+              "value": "en"
+            },
+            {
+              "name": "हिंदी",
+              "value": "hi"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
