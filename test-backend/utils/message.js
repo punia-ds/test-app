@@ -1,0 +1,47 @@
+const message = {
+  not_found: "Not Found!",
+  something_wrong: "Something Wrong!",
+  id: { not: "No Id Found!", enter: "Please Enter ID" },
+  error: {
+    not: "Not Errors Yet!",
+  },
+  user: {
+    registration: "Registration Success!",
+    login: "Login Success!",
+    failed: "Login Failed!",
+    name: "Please Enter Name",
+    email: "Please Enter Email",
+    password: "Please Enter Password",
+    exceed: "Sorry You Can't Create Custom More Than Limit",
+  },
+  event: {
+    empty: "Please Fill Details",
+    name: "Please Enter Event Name",
+    date: "Please Enter Event Date",
+    by: "Please Enter Event Adding By",
+    city: "Please Enter Event's City Name",
+    state: "Please Enter Event's State Name",
+    pin: "Please Enter Event Pin Code",
+    id: "Please Enter Correct Event Id",
+    status: "Please Enter Event Status",
+    total: "Please Enter Event's Total Collection",
+  },
+  fund: {
+    empty: "Please Fill Details",
+    name: "Please Enter Fund Name",
+    date: "Please Enter Fund Date",
+    by: "Please Enter Fund Adding By",
+    city: "Please Enter Event's City Name",
+    state: "Please Enter Event's State Name",
+    pin: "Please Enter Event Pin Code",
+    id: "Please Enter Correct Fund Id",
+    status: "Please Enter Fund Status",
+    amount: "Please Enter Amount",
+    mode: "Please Enter Mode",
+    email: "Please Enter Email",
+    event: "Please Enter Event",
+  },
+  bad_request: "Bad Request",
+};
+
+export { message };
