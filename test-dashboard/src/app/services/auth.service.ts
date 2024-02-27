@@ -34,9 +34,8 @@ export class AuthService {
           this.alertSer.presentAlert('Login', 'Error', this.tokenRes.message);
           this.router.navigate(['/login']);
         } else {
-          console.log('first');
           localStorage.setItem('user', JSON.stringify(this.tokenRes.message));
-          this.router.navigate(['/home']);
+          this.router.navigate(['/dashboard']);
           setTimeout(() => {
             this.loadingSer.dismissLoading();
           }, 700);

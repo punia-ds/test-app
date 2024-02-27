@@ -10,6 +10,11 @@ export class HomePage implements OnInit {
   constructor(private loadingSer: LoadingService) {}
 
   ngOnInit() {
-    // this.loadingSer.dismissLoading();
+    // window.onload = function () {
+    //   if (!window.location.hash) {
+    //     // window.location = window.location + '#loaded';
+    //     window.location.reload();
+    //   }
+    // };
   }
 }
