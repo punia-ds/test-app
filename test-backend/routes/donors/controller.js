@@ -61,7 +61,7 @@ async function getAllDonors(req, res) {
     const donors = await DonorModel.find({});
 
     if (!donors.length) {
-      return res.status(404).json({ status: 404, message: "Donors not found" });
+      return res.json({ status: 404, message: "Donors not found" });
     }
     res.json({ status: 200, message: donors });
   } catch (error) {

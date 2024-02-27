@@ -37,8 +37,6 @@ const donorSchema = new mongoose.Schema(
     mobile: {
       type: String,
       required: true,
-      minlength: 10,
-      maxlength: 10,
     },
     name: {
       type: String,

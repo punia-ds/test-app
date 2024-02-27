@@ -10,13 +10,38 @@ export class AppComponent implements OnInit {
   path: any;
   user: any = JSON.parse(localStorage.getItem('user') || '');
   public appPages = [
-    { title: 'Home', url: '/dashboard', icon: 'home' },
-    { title: 'Donors', url: '/dashboard/donors', icon: 'water' },
-    { title: 'Radios', url: '/dashboard/radios', icon: 'radio' },
-    { title: 'Categories', url: '/dashboard/categories', icon: 'list' },
-    { title: 'Requests', url: '/dashboard/requests', icon: 'headset' },
-    { title: 'Teams', url: '/dashboard/teams', icon: 'people' },
-    { title: 'Social', url: '/dashboard/social', icon: 'share-social' },
+    { title: 'Home', url: '/dashboard', icon: 'home', path: 'dashboard' },
+    {
+      title: 'Donors',
+      url: '/dashboard/donors',
+      icon: 'water',
+      path: 'donors',
+    },
+    {
+      title: 'Radios',
+      url: '/dashboard/radios',
+      icon: 'radio',
+      path: 'radios',
+    },
+    {
+      title: 'Categories',
+      url: '/dashboard/categories',
+      icon: 'list',
+      path: 'categories',
+    },
+    {
+      title: 'Requests',
+      url: '/dashboard/requests',
+      icon: 'headset',
+      path: 'requests',
+    },
+    { title: 'Teams', url: '/dashboard/teams', icon: 'people', path: 'teams' },
+    {
+      title: 'Social',
+      url: '/dashboard/social',
+      icon: 'share-social',
+      path: 'social',
+    },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(private ar: ActivatedRoute) {}
@@ -24,5 +49,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     let pathArr = this.url.split('/');
     this.path = pathArr[pathArr.length - 1];
+    console.log(this.path);
   }
 }

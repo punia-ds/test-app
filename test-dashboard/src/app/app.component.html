@@ -16,7 +16,7 @@
               [routerLink]="[p.url]"
               lines="none"
               detail="false"
-              routerLinkActive="selected"
+              [routerLinkActive]="path === p.path ? 'selected' : ''"
             >
               <ion-icon
                 aria-hidden="true"
