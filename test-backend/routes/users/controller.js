@@ -13,19 +13,19 @@ async function registration(req, res) {
 
     // Validate required fields
     if (!email || !password) {
-      return res.json({ status: 400, message: message.error.fill_all });
+      return res.json({ status: 400, message: "Please Fill All Fields" });
     }
 
     // Validate email format
     if (!emailRegex.test(email)) {
-      return res.json({ status: 400, message: message.error.email });
+      return res.json({ status: 400, message: "Email Is Not Valid" });
     }
 
     const user = await UserModel.findOne({
       email,
     });
 
-    if (user) return res.json({ status: 400, message: message.error.exists });
+    if (user) return res.json({ status: 401, message: "User Already Exists" });
 
     // password hashing
     let pass = bcrypt.hashSync(password, 12);
