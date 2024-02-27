@@ -18,8 +18,8 @@ const categorySchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["Draft", "Published"],
-      default: "Draft",
+      enum: ["active", "pending", "deleted"],
+      default: "pending",
     },
   },
   { timestamps: true }
