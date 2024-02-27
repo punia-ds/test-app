@@ -11,11 +11,12 @@ export class AppComponent implements OnInit {
   user: any = JSON.parse(localStorage.getItem('user') || '');
   public appPages = [
     { title: 'Home', url: '/dashboard', icon: 'home' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'Donors', url: '/dashboard/donors', icon: 'water' },
+    { title: 'Radios', url: '/dashboard/radios', icon: 'radio' },
+    { title: 'Categories', url: '/dashboard/categories', icon: 'list' },
+    { title: 'Requests', url: '/dashboard/requests', icon: 'headset' },
+    { title: 'Teams', url: '/dashboard/teams', icon: 'people' },
+    { title: 'Social', url: '/dashboard/social', icon: 'share-social' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(private ar: ActivatedRoute) {}

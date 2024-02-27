@@ -9,6 +9,47 @@ const routes: Routes = [
     loadChildren: () =>
       import('../pages/home/home.module').then((m) => m.HomePageModule),
   },
+  {
+    path: 'donors',
+    loadChildren: () =>
+      import('../pages/donors/donors.module').then((m) => m.DonorsPageModule),
+  },
+  {
+    path: 'radios',
+    loadChildren: () =>
+      import('../pages/radios/radios.module').then((m) => m.RadiosPageModule),
+  },
+  {
+    path: 'categories',
+    loadChildren: () =>
+      import('../pages/categories/categories.module').then(
+        (m) => m.CategoriesPageModule
+      ),
+  },
+  {
+    path: 'contacts',
+    loadChildren: () =>
+      import('../pages/contacts/contacts.module').then(
+        (m) => m.ContactsPageModule
+      ),
+  },
+  {
+    path: 'requests',
+    loadChildren: () =>
+      import('../pages/requests/requests.module').then(
+        (m) => m.RequestsPageModule
+      ),
+  },
+  {
+    path: 'social',
+    loadChildren: () =>
+      import('../pages/social/social.module').then((m) => m.SocialPageModule),
+  },
+  {
+    path: 'teams',
+    loadChildren: () =>
+      import('../pages/teams/teams.module').then((m) => m.TeamsPageModule),
+  },
 ];
 
 @NgModule({
