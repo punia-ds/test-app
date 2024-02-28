@@ -15,6 +15,6 @@ CategoryRoutes.get("/all", getAllCats);
 CategoryRoutes.get("/single/:id", getSingleCat);
 CategoryRoutes.put("/update", updateCat);
 CategoryRoutes.put("/status", updateCatStatus);
-CategoryRoutes.delete("/delete/:id", deleteCat);
+CategoryRoutes.delete("/delete/:_id", deleteCat);
 
 export default CategoryRoutes;

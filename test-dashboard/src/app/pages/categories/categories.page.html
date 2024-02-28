@@ -1,13 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>categories</ion-title>
+    <ion-title>Categories</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">categories</ion-title>
+      <ion-title size="large">Categories</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list *ngIf="cats?.length > 0">
+    <ion-item-sliding *ngFor="let cat of cats">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="cat.image" />
+        </ion-avatar>
+        <ion-label>{{cat.name}}</ion-label>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option (click)="openEdit(cat)">Edit</ion-item-option>
+        <ion-item-option (click)="deleteCat(cat._id)" color="danger"
+          >Delete</ion-item-option
+        >
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <h1 *ngIf="!cats?.length">No Categories</h1>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openAdd()" color="success">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

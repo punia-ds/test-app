@@ -1,0 +1,45 @@
+<div class="container">
+  <form [formGroup]="catForm" (submit)="cat?updateCat():addCat()">
+    <!-- floating input -->
+    <ion-item>
+      <ion-label position="floating">Name*</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Slug</ion-label>
+      <ion-input formControlName="slug" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Image</ion-label>
+      <ion-input formControlName="image" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea
+        [autoGrow]="true"
+        formControlName="description"
+        type="text"
+      ></ion-textarea>
+    </ion-item>
+    <ion-button
+      *ngIf="!cat"
+      [disabled]="!catForm.valid"
+      type="submit"
+      expand="block"
+      >Add</ion-button
+    >
+    <ion-button
+      *ngIf="cat"
+      color="success"
+      [disabled]="!catForm.valid"
+      type="submit"
+      expand="block"
+      >Update</ion-button
+    >
+  </form>
+
+  <ion-img *ngIf="cat" class="cat-img" [src]="cat?.image"></ion-img>
+</div>

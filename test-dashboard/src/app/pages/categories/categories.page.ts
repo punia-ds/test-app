@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { CategoryService } from 'src/app/services/category.service';
+import { AddComponent } from './add/add.component';
 
 @Component({
   selector: 'app-categories',
@@ -7,7 +9,10 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./categories.page.scss'],
 })
 export class CategoriesPage implements OnInit {
-  constructor(private catSer: CategoryService) {}
+  constructor(
+    private catSer: CategoryService,
+    private modalCtrl: ModalController
+  ) {}
 
   catRes: any;
   cats: any;
@@ -17,6 +22,33 @@ export class CategoriesPage implements OnInit {
       if (this.catRes.status == 200) {
         this.cats = this.catRes.message;
       }
+    });
+  }
+
+  async openAdd() {
+    const modal = await this.modalCtrl.create({
+      component: AddComponent,
+      breakpoints: [0, 0.5, 1],
+      initialBreakpoint: 0.5,
+    });
+    await modal.present();
+  }
+  async openEdit(cat: any) {
+    const modal = await this.modalCtrl.create({
+      component: AddComponent,
+      breakpoints: [0, 0.5, 1],
+      initialBreakpoint: 0.5,
+      componentProps: {
+        cat,
+      },
+    });
+    await modal.present();
+  }
+
+  async deleteCat(_id: any) {
+    this.catSer.deleteCat(_id).subscribe((res) => {
+      console.log(res);
+      window.location.reload();
     });
   }
 }
