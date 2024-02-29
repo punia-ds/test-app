@@ -45,7 +45,7 @@ async function addRadio(req, res) {
 
 async function getRadios(req, res) {
   try {
-    const radios = await RadioModel.find().populate({
+    const radios = await RadioModel.find({}).populate({
       path: "category",
       select: "name",
       model: "category",

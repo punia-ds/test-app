@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const radioSchema = new mongoose.Schema(
   {
     category: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: "category",
     },
     description: {

@@ -45,6 +45,15 @@ export class CategoriesPage implements OnInit {
     await modal.present();
   }
 
+  changeStatus(cat: any) {
+    this.catSer
+      .updateCatStatus({ _id: cat._id, status: 'active' })
+      .subscribe((res: any) => {
+        console.log(res);
+        window.location.reload();
+      });
+  }
+
   async deleteCat(_id: any) {
     this.catSer.deleteCat(_id).subscribe((res) => {
       console.log(res);

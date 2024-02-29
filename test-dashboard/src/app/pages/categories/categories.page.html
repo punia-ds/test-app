@@ -22,6 +22,12 @@
 
       <ion-item-options>
         <ion-item-option (click)="openEdit(cat)">Edit</ion-item-option>
+        <ion-item-option
+          *ngIf="cat.status == 'pending'"
+          color="success"
+          (click)="changeStatus(cat)"
+          >Activate</ion-item-option
+        >
         <ion-item-option (click)="deleteCat(cat._id)" color="danger"
           >Delete</ion-item-option
         >

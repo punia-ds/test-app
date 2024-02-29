@@ -1,0 +1,124 @@
+<div class="container">
+  <h1>Add</h1>
+  <form [formGroup]="radioForm" (submit)="addRadio()">
+    <!-- floating form input -->
+
+    <ion-list>
+      <ion-item>
+        <ion-input
+          label="Name"
+          labelPlacement="floating"
+          formControlName="title"
+          placeholder="Enter Name"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Choose Category"
+          formControlName="category"
+          label-placement="floating"
+        >
+          <ion-select-option value="{{ cat._id }}" *ngFor="let cat of cats">
+            {{ cat.name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Facebook"
+          labelPlacement="floating"
+          formControlName="fb"
+          placeholder="Enter Facebook Url"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Instagram"
+          labelPlacement="floating"
+          formControlName="insta"
+          placeholder="Enter Instagram Url"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Twitter"
+          labelPlacement="floating"
+          formControlName="twitter"
+          placeholder="Enter Twitter Url"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Heading"
+          labelPlacement="floating"
+          formControlName="head"
+          placeholder="Enter Heading"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Image"
+          labelPlacement="floating"
+          formControlName="image"
+          placeholder="Enter Logo Url"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Meta"
+          labelPlacement="floating"
+          formControlName="meta"
+          placeholder="Enter Meta Url"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Streaming"
+          labelPlacement="floating"
+          formControlName="url"
+          placeholder="Enter Streaming Url"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Website"
+          labelPlacement="floating"
+          formControlName="website"
+          placeholder="Enter Website Url"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Youtube"
+          labelPlacement="floating"
+          formControlName="youtube"
+          placeholder="Enter Youtube Url"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea
+          label="Description"
+          labelPlacement="floating"
+          formControlName="description"
+          placeholder="Enter Description"
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-button
+        type="submit"
+        (click)="addRadio()"
+        expand="block"
+        shape="round"
+      >
+        Add Radio
+      </ion-button>
+    </ion-list>
+  </form>
+</div>

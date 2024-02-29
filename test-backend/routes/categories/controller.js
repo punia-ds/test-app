@@ -98,11 +98,11 @@ async function updateCatStatus(req, res) {
 async function deleteCat(req, res) {
   try {
     const { _id } = req.params;
-    let result = await CatModel.findByIdAndDelete({ _id });
-    // let result = await CatModel.findByIdAndUpdate(
-    //   { _id },
-    //   { $set: { status: "deleted" } }
-    // );
+    // let result = await CatModel.findByIdAndDelete({ _id });
+    let result = await CatModel.findByIdAndUpdate(
+      { _id },
+      { $set: { status: "deleted" } }
+    );
     if (!result) {
       return res.json({ status: 404, message: "Category not found" });
     }
