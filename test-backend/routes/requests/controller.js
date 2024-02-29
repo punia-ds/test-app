@@ -1,10 +1,10 @@
 import RequestsModel from "./model.js";
 
 async function addRequest(req, res) {
-  const { name, mobile, location, song, playing_at } = req.body;
+  const { name, mobile, location, song } = req.body;
 
   // Validate the required fields
-  if (!name || !mobile || !location || !song || !playing_at) {
+  if (!name || !mobile || !location || !song) {
     return res.json({ status: 400, message: "All fields are required." });
   }
 
@@ -14,7 +14,6 @@ async function addRequest(req, res) {
     mobile,
     location,
     song,
-    playing_at,
   });
 
   try {
@@ -57,7 +56,7 @@ async function updatePlayingTime(req, res) {
     const { _id, playing_at } = req.body;
     const requests = await RequestsModel.findByIdAndUpdate(
       { _id },
-      { $set: { playing_at } }
+      { $set: { playing_at, status: "scheduled" } }
     );
 
     if (!requests) {

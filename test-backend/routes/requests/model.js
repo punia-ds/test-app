@@ -24,7 +24,7 @@ const requestSchema = new mongoose.Schema({
     default: "pending",
   },
   playing_at: {
-    type: Date,
+    type: String,
   },
 });
 

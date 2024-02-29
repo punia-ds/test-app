@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Update</h1>
+  <h2>Name : {{ request.name }}</h2>
+  <h2>Mobile : {{ request.mobile }}</h2>
+  <h2>Song : {{ request.song }}</h2>
+  <h2>Address : {{ request.location }}</h2>
+  <h2>Status : {{ request.status }}</h2>
+
+  <ion-datetime-button
+    datetime="datetime"
+    id="fake-click"
+  ></ion-datetime-button>
+  <ion-modal
+    [keepContentsMounted]="true"
+    [isOpen]="showCalendar"
+    (didDismiss)="cancelCalendar()"
+  >
+    <ng-template>
+      <ion-datetime
+        id="datetime"
+        [showDefaultButtons]="true"
+        doneText="Confirm"
+        cancelText="Cancel"
+        preferWheel="true"
+        [(ngModel)]="date"
+      ></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-button expand="block" (click)="updateTime()">Update</ion-button>
+</div>
