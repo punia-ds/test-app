@@ -1,9 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SocialService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  addSocial(data: any) {
+    return this.http.post(`${environment.baseUrl}/social/add`, data);
+  }
+
+  updateSocial(data: any) {
+    return this.http.put(`${environment.baseUrl}/social/update`, data);
+  }
+
+  getSocials() {
+    return this.http.get(`${environment.baseUrl}/social/all`);
+  }
 }
