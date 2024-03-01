@@ -7,6 +7,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgxSearchFilterModule } from 'ngx-search-filter';
+import { SingleDonorComponent } from '../pages/single-donor/single-donor.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,8 @@ import { TranslateModule } from '@ngx-translate/core';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
     TranslateModule,
+    NgxSearchFilterModule,
   ],
-  declarations: [Tab2Page],
+  declarations: [Tab2Page, SingleDonorComponent],
 })
 export class Tab2PageModule {}

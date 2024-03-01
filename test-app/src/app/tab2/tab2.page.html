@@ -11,5 +11,68 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-searchbar
+    placeholder="Search Anything"
+    inputmode="text"
+    [(ngModel)]="search"
+    type="text"
+    [debounce]="250"
+  ></ion-searchbar>
+
+  <ion-list style="margin-bottom: 50px">
+    <ion-item *ngFor="let donor of donors | filter: search">
+      <ion-row class="ion-align-items-center" style="width: 100%">
+        <ion-col size="3">
+          <!-- <img
+            *ngIf="donor.b_group=='A+'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          /> -->
+          <img class="img" [src]="imgUrl(donor.b_group)" />
+          <!-- <img
+            *ngIf="donor.b_group=='B+'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          />
+          <img
+            *ngIf="donor.b_group=='B-'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          />
+          <img
+            *ngIf="donor.b_group=='O+'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          />
+          <img
+            *ngIf="donor.b_group=='O-'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          />
+          <img
+            *ngIf="donor.b_group=='AB+'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          />
+          <img
+            *ngIf="donor.b_group=='AB-'"
+            class="img"
+            [src]="imgPath+'/a+.png'"
+          /> -->
+        </ion-col>
+        <ion-col size="9">
+          <ion-label>Name : {{donor.name | titlecase}}</ion-label>
+          <ion-label>Address : {{donor.address | titlecase}}</ion-label>
+          <ion-button
+            (click)="openView(donor)"
+            expand="block"
+            style="margin-top: 12px; font-size: 15px"
+          >
+            <ion-icon slot="icon-only" name="eye-outline"></ion-icon> &nbsp;
+            View
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 </ion-content>
