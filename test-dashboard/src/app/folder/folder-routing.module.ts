@@ -50,6 +50,25 @@ const routes: Routes = [
     loadChildren: () =>
       import('../pages/teams/teams.module').then((m) => m.TeamsPageModule),
   },
+  {
+    path: 'posts',
+    loadChildren: () =>
+      import('../pages/posts/posts.module').then((m) => m.PostsPageModule),
+  },
+  {
+    path: 'clients',
+    loadChildren: () =>
+      import('../pages/clients/clients.module').then(
+        (m) => m.ClientsPageModule
+      ),
+  },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('../pages/app-settings/app-settings.module').then(
+        (m) => m.AppSettingsPageModule
+      ),
+  },
 ];
 
 @NgModule({

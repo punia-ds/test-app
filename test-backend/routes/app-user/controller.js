@@ -37,7 +37,10 @@ async function register(req, res) {
 
 async function getClients(req, res) {
   try {
-    const clients = await AppUserModel.find();
+    const clients = await AppUserModel.find().populate({
+      path: "_id",
+      model: "client",
+    });
 
     if (!clients.length)
       return res.json({ status: 404, message: "Clients not found" });

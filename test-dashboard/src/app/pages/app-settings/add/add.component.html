@@ -1,0 +1,80 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+
+  <form
+    [formGroup]="settingForm"
+    (submit)="data ? updateSetting() : addSetting()"
+  >
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Heading</ion-label>
+        <ion-input formControlName="title" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea
+          formControlName="description"
+          type="text"
+          required
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">App Name</ion-label>
+        <ion-input formControlName="appName" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Banner Ads"
+          formControlName="bannerAds"
+          [placeholder]="data ? data.bannerAds : 'Banner Ads'"
+          [value]="data ? data.bannerAds : ''"
+        >
+          <ion-select-option value="true">Yes</ion-select-option>
+          <ion-select-option value="false">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          label="Rewards Ads"
+          formControlName="rewardAds"
+          [placeholder]="data ? data.rewardAds : 'Rewards Ads'"
+          [value]="data ? data.rewardAds : ''"
+        >
+          <ion-select-option value="true">Yes</ion-select-option>
+          <ion-select-option value="false">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          label="Interstitial Ads"
+          formControlName="interAds"
+          [placeholder]="data ? data.interAds : 'Interstitial Ads'"
+          [value]="data ? data.interAds : ''"
+        >
+          <ion-select-option value="true">Yes</ion-select-option>
+          <ion-select-option value="false">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-button
+        *ngIf="!data"
+        [disabled]="!settingForm.valid"
+        type="submit"
+        expand="block"
+        color="primary"
+        >Add</ion-button
+      >
+      <ion-button
+        *ngIf="data"
+        color="success"
+        [disabled]="!settingForm.valid"
+        type="submit"
+        expand="block"
+        >Update</ion-button
+      >
+    </ion-list>
+  </form>
+</div>

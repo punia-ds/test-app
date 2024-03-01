@@ -42,6 +42,12 @@ export class AppComponent implements OnInit {
       icon: 'share-social',
       path: 'social',
     },
+    {
+      title: 'Settings',
+      url: '/dashboard/settings',
+      icon: 'cog',
+      path: 'settings',
+    },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(private ar: ActivatedRoute) {}

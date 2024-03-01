@@ -9,7 +9,7 @@ async function addApp(req, res) {
       return res.json({ status: 400, message: "All fields are required" });
     }
     const app = new AppModel({
-      title,
+      heading: title,
       description,
       appName,
       bannerAds,

@@ -7,6 +7,7 @@ import CategoryRoutes from "./categories/route.js";
 import AppRoutes from "./app/route.js";
 import TeamRoutes from "./teams/route.js";
 import SocialRoutes from "./social/route.js";
+import postRoutes from "./posts/route.js";
 
 const apiRoutes = express.Router();
 
@@ -17,6 +18,7 @@ apiRoutes.use("/radio", RadioRoutes);
 apiRoutes.use("/category", CategoryRoutes);
 apiRoutes.use("/app", AppRoutes);
 apiRoutes.use("/team", TeamRoutes);
+apiRoutes.use("/post", postRoutes);
 apiRoutes.use("/social", SocialRoutes);
 
 export default apiRoutes;
