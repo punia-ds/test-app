@@ -1,58 +1,96 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  inject,
+  ElementRef,
+  Renderer2,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import * as L from 'leaflet';
+import * as moment from 'moment';
+import { ModalController } from '@ionic/angular';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-single-donor',
   templateUrl: './single-donor.component.html',
   styleUrls: ['./single-donor.component.scss'],
 })
-export class SingleDonorComponent implements OnInit {
+export class SingleDonorComponent implements OnInit, AfterViewInit {
   private document = inject(DOCUMENT);
+  imgPath: string = '../../../assets/images/blood/';
   @Input() donor: any;
   map: any;
 
-  constructor() {}
+  constructor(private modalCtrl: ModalController) {}
 
-  ngOnInit() {
-    this.loadLeafletMap();
-    // const map = L.map('map').setView([51.505, -0.09], 22);
-    // const tiles = L.tileLayer(
-    //   'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-    //   {
-    //     maxZoom: 22,
-    //   }
-    // ).addTo(map);
-    // console.log(this.donor);
-    // const mapContainer = this.document.getElementById('map');
-    // this.map = L.map(mapContainer ? mapContainer : '').setView(
-    //   [51.505, -0.09],
-    //   13
-    // ); // Example coordinates and zoom level
-    // // Add basemap tiles (e.g., OpenStreetMap)
-    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //   attribution:
-    //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    // }).addTo(this.map);
+  ngOnInit() {}
+
+  // modal
+  @ViewChild('content') content!: ElementRef;
+  ngAfterViewInit() {
+    // Ensure the element is loaded
+    this.calculateDistanceFromTop();
+  }
+  calculateDistanceFromTop() {
+    let totalOffset = 0;
+    let currentElement = this.content.nativeElement;
+
+    // Loop through the offset parents to calculate the total offset from the top
+    while (currentElement) {
+      totalOffset += currentElement.offsetTop;
+      currentElement = currentElement.offsetParent;
+    }
+
+    console.log('Distance from the top:', totalOffset);
+    // Perform any action with totalOffset, e.g., setting it as a property or displaying it
   }
 
-  leafletMap: any;
-
-  loadLeafletMap() {
-    this.leafletMap = new L.Map('map');
-
-    const self = this;
-
-    this.leafletMap.on('load', function () {
-      setTimeout(() => {
-        self.leafletMap.invalidateSize();
-      }, 10);
+  async share() {
+    await Share.share({
+      title: 'See cool stuff',
+      text: 'Really awesome thing you need to see right meow',
+      url: 'http://ionicframework.com/',
+      dialogTitle: 'Share with buddies',
     });
-
-    this.leafletMap.setView([51.505, -0.09], 12);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 22,
-    }).addTo(this.leafletMap);
   }
+  // async ionViewDidEnter() {
+  //   const top = this.content.nativeElement?.offsetTop;
+  //   console.log(`Distance from top: ${top}px`);
+  // }
+
+  // dismiss() {
+  //   this.modalCtrl.dismiss();
+  // }
+  // modal ends
+
+  calculateAge(dob: any) {
+    const birthdate = moment(dob);
+    const today = moment();
+    return today.diff(birthdate, 'years');
+  }
+
+  // #TODO Leaflet map future use
+  // leafletMap: any;
+  // loadLeafletMap() {
+
+  //   this.leafletMap = new L.Map('map');
+
+  //   const self = this;
+
+  //   this.leafletMap.on('load', function () {
+  //     setTimeout(() => {
+  //       self.leafletMap.invalidateSize();
+  //     }, 10);
+  //   });
+
+  //   this.leafletMap.setView([51.505, -0.09], 12);
+
+  //   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //     maxZoom: 22,
+  //   }).addTo(this.leafletMap);
+  // }
 }

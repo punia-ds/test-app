@@ -3,6 +3,7 @@ import { DonationService } from '../services/donation.service';
 import { LoadingService } from '../services/loading.service';
 import { ModalController } from '@ionic/angular';
 import { SingleDonorComponent } from '../pages/single-donor/single-donor.component';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-tab2',
@@ -44,8 +45,8 @@ export class Tab2Page implements OnInit {
   async openView(donor: any) {
     const modal = await this.modalCtrl.create({
       component: SingleDonorComponent,
-      breakpoints: [0, 0.8, 1],
-      initialBreakpoint: 0.8,
+      breakpoints: [0, 0.4, 1],
+      initialBreakpoint: 0.4,
       cssClass: 'custom-modal-donor',
 
       componentProps: {
@@ -54,6 +55,20 @@ export class Tab2Page implements OnInit {
     });
     await modal.present();
   }
+
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri,
+    });
+
+    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+    // var imageUrl = image.webPath;
+
+    // Can be set to the src of an image now
+    console.log(image);
+  };
 
   imgUrl(b_group: string) {
     let group = b_group.toLowerCase();
