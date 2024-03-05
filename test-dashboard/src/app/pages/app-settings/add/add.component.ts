@@ -31,6 +31,7 @@ export class AddComponent implements OnInit {
       bannerAds: ['', Validators.required],
       interAds: ['', Validators.required],
       rewardAds: ['', Validators.required],
+      streamingUrl: ['', Validators.required],
     });
   }
 
@@ -42,13 +43,14 @@ export class AddComponent implements OnInit {
       bannerAds: this.data?.bannerAds,
       interAds: this.data?.interAds,
       rewardAds: this.data?.rewardAds,
+      streamingUrl: this.data?.streamingUrl,
     });
   }
 
   addSetting() {
     this.settingSer.addSetting(this.settingForm.value).subscribe((res) => {
       console.log(res);
-      // window.location.reload();
+      window.location.reload();
     });
   }
   updateSetting() {

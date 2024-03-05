@@ -2,8 +2,15 @@ import AppModel from "./model.js";
 
 async function addApp(req, res) {
   try {
-    const { title, description, appName, bannerAds, interAds, rewardAds } =
-      req.body;
+    const {
+      title,
+      description,
+      appName,
+      bannerAds,
+      interAds,
+      rewardAds,
+      streamingUrl,
+    } = req.body;
 
     if (!title || !appName) {
       return res.json({ status: 400, message: "All fields are required" });
@@ -15,6 +22,7 @@ async function addApp(req, res) {
       bannerAds,
       interAds,
       rewardAds,
+      streamingUrl,
     });
     await app.save();
 

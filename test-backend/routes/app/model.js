@@ -15,6 +15,10 @@ const appSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    streamingUrl: {
+      type: String,
+      required: true,
+    },
     bannerAds: {
       type: Boolean,
       default: false,

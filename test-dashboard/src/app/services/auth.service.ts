@@ -36,10 +36,10 @@ export class AuthService {
         } else {
           localStorage.setItem('user', JSON.stringify(this.tokenRes.message));
           this.router.navigate(['/dashboard']);
-          setTimeout(() => {
-            this.loadingSer.dismissLoading();
-          }, 700);
         }
+        setTimeout(() => {
+          this.loadingSer.dismissLoading();
+        }, 700);
       });
   }
 

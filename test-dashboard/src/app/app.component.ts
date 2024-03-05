@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent implements OnInit {
   url = window.location.href;
   path: any;
-  user: any = JSON.parse(localStorage.getItem('user') || '');
+  user: any;
   public appPages = [
     { title: 'Home', url: '/dashboard', icon: 'home', path: 'dashboard' },
     {
@@ -56,5 +56,8 @@ export class AppComponent implements OnInit {
     let pathArr = this.url.split('/');
     this.path = pathArr[pathArr.length - 1];
     console.log(this.path);
+    if (localStorage.getItem('user')) {
+      this.user = JSON.parse(localStorage.getItem('user') || '');
+    }
   }
 }
