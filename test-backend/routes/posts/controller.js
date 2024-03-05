@@ -1,3 +1,4 @@
+import { sendEmail } from "../../services/sendMail.js";
 import PostModel from "./model.js";
 
 async function addPost(req, res) {
@@ -19,6 +20,13 @@ async function addPost(req, res) {
     });
 
     await newPost.save();
+
+    await sendEmail(
+      "punia.umesh@gmail.com",
+      "New Post Added",
+      `<h2>${title} added successfully of ${category}</h2>`,
+      `<h2>${title} added successfully of ${category}</h2>`
+    );
 
     return res.json({ status: 200, message: category + " added successfully" });
   } catch (error) {

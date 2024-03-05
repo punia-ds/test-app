@@ -1,3 +1,4 @@
+import { sendEmail } from "../../services/sendMail.js";
 import DonorModel from "./model.js";
 
 async function registerDonor(req, res) {
@@ -47,7 +48,13 @@ async function registerDonor(req, res) {
   try {
     // Save the new donor to the database
     const savedDonor = await newDonor.save();
-    res.status(201).send({ status: 200, message: "Donor added successfully" });
+    await sendEmail(
+      "punia.umesh@gmail.com",
+      "New Donor Registration",
+      `<h2>New Donor Registered ${name}</h2>`,
+      `<h2>New Donor Registered ${name}</h2>`
+    );
+    res.send({ status: 200, message: "Donor added successfully" });
   } catch (error) {
     res.status(500).send({
       status: 500,
