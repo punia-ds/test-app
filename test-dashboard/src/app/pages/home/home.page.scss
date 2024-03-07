@@ -1,0 +1,36 @@
+.card {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  .card-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    .card-top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.bg-blue {
+  background: url("../../../assets/images/gifs/user.gif") no-repeat center
+      center,
+    rgb(0, 0, 0);
+  background-position: center;
+  background-size: cover;
+}
+.bg-radios {
+  background: url("../../../assets/images/gifs/radios.gif") no-repeat center
+    center;
+  background-position: center;
+  background-size: cover;
+}
+.bg-requests {
+  background: url("../../../assets/images/gifs/list.gif") no-repeat center
+    center;
+  background-position: center;
+  background-size: cover;
+}
