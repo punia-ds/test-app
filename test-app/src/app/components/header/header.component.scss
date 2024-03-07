@@ -1,0 +1,23 @@
+.header {
+  margin:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .title {
+    width: 70%;
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 26px;
+      margin-top: 0;
+    }
+  }
+  .logo {
+    width: 30%;
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}

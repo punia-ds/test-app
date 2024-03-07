@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { HeaderComponent } from '../components/header/header.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
-    TranslateModule
+    TranslateModule,
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page, HeaderComponent],
 })
 export class Tab1PageModule {}

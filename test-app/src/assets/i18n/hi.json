@@ -2,6 +2,12 @@
   "app": {
     "TITLE": "हिंदी",
     "SUBTITLE": "हिंदी भाषा",
+    "ALERT": {
+      "HEADER": "जानकारी",
+      "SUBHEADER": "",
+      "DESCRIPTION": "यह हिंदी वेबसाइट में है. यदि",
+      "BUTTON": "धन्यवाद"
+    },
     "TABS": {
       "HOME": "होम",
       "DONATION": "दान",
@@ -9,7 +15,13 @@
     },
     "HOME": {
       "TITLE": "हिंदी",
-      "DESCRIPTION": "यह हिंदी वेबसाइट में है. यदि"
+      "DESCRIPTION": "यह हिंदी वेबसाइट में है. यदि",
+      "RADIO": {
+        "LOADING": "लोड हो रहा है...",
+        "ERROR": "त्रुटि",
+        "OK": "ठीक है",
+        "TRY_AGAIN": "पुनः प्रयास करें"
+      }
     },
     "DONATION": {
       "TITLE": "रक्त दान",

@@ -2,6 +2,12 @@
   "app": {
     "TITLE": "English",
     "SUBTITLE": "English Language",
+    "ALERT": {
+      "HEADER": "Info",
+      "SUBHEADER": "",
+      "DESCRIPTION": "This is the English version of the website. If you",
+      "BUTTON": "Thanks"
+    },
     "TABS": {
       "HOME": "Home",
       "DONATION": "Donation",
@@ -9,7 +15,13 @@
     },
     "HOME": {
       "TITLE": "English",
-      "DESCRIPTION": "This is the English version of the website. If you"
+      "DESCRIPTION": "This is the English version of the website. If you",
+      "RADIO": {
+        "LOADING": "Loading...",
+        "ERROR": "Error",
+        "OK": "Ok",
+        "TRY_AGAIN": "Try Again"
+      }
     },
     "DONATION": {
       "TITLE": "Blood Donation",
