@@ -2,11 +2,11 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { config } from "dotenv";
-import { connection } from "./config/db.js";
+import { connection } from "./src/config/db.js";
 import fs from "fs";
-import apiRoutes from "./routes/index.js";
+import apiRoutes from "./src/routes/index.js";
 import axios from "axios";
-import { sendEmail } from "./services/sendMail.js";
+import { sendEmail } from "./src/services/sendMail.js";
 
 config();
 const app = express();
@@ -30,7 +30,7 @@ app.get("/email", (req, res) => {
 app.use("/api/v1/", apiRoutes);
 
 // app.get("/donor", (req, res) => {
-//   fs.readFile("./data/donor.json", "utf-8", (err, data) => {
+//   fs.readFile("./src/data/donor.json", "utf-8", (err, data) => {
 //     if (err) return console.log(err);
 //     let donor = JSON.parse(data);
 
