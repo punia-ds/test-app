@@ -90,5 +90,19 @@ async function getSingleApp(req, res) {
     res.json({ status: 500, message: error });
   }
 }
+async function appByAppName(req, res) {
+  try {
+    const { appName } = req.params;
 
-export { getApps, addApp, getSingleApp, updateApp };
+    const app = await AppModel.findOne({ appName });
+
+    if (!app) {
+      return res.json({ status: 404, message: "App not found" });
+    }
+    return res.json({ status: 200, message: app });
+  } catch (error) {
+    res.json({ status: 500, message: error });
+  }
+}
+
+export { getApps, addApp, getSingleApp, updateApp, appByAppName };

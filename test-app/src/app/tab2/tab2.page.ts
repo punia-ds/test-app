@@ -4,6 +4,7 @@ import { LoadingService } from '../services/loading.service';
 import { ModalController } from '@ionic/angular';
 import { SingleDonorComponent } from '../pages/single-donor/single-donor.component';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tab2',
@@ -16,7 +17,8 @@ export class Tab2Page implements OnInit {
   constructor(
     private donationService: DonationService, // private translate: TranslateService
     private loadingSer: LoadingService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -45,12 +47,15 @@ export class Tab2Page implements OnInit {
   async openView(donor: any) {
     const modal = await this.modalCtrl.create({
       component: SingleDonorComponent,
-      breakpoints: [0, 0.4, 1],
+      breakpoints: [0, 0.4, 0.8],
       initialBreakpoint: 0.4,
       cssClass: 'custom-modal-donor',
-
       componentProps: {
-        donor,
+        donor: {
+          ...donor,
+          from: this.translate.instant('app.DONATION.DONORS.FROM'),
+          share: this.translate.instant('app.DONATION.DONORS.SHARE'),
+        },
       },
     });
     await modal.present();

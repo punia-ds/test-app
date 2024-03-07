@@ -13,7 +13,15 @@
     },
     "DONATION": {
       "TITLE": "रक्त दान",
-      "DESCRIPTION": "दान"
+      "DESCRIPTION": "दान",
+      "DONORS": {
+        "NAME": "नाम",
+        "ADDRESS": "पता",
+        "FROM": "पता",
+        "YEARS": "वर्ष",
+        "SHARE": "शेयर",
+        "VIEW": "देखें"
+      }
     },
     "MANDI": "मंडी",
     "MORE": {

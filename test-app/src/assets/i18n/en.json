@@ -13,9 +13,17 @@
     },
     "DONATION": {
       "TITLE": "Blood Donation",
-      "DESCRIPTION": "Donation"
+      "DESCRIPTION": "Donation",
+      "DONORS": {
+        "NAME": "Name",
+        "ADDRESS": "Address",
+        "FROM": "From",
+        "YEARS": "Years",
+        "SHARE": "Share",
+        "VIEW": "View"
+      }
     },
-    "MANDI":"Mandis",
+    "MANDI": "Mandis",
     "MORE": {
       "TITLE": "More",
       "DESCRIPTION": "More",

@@ -11,5 +11,20 @@
     </ion-toolbar>
   </ion-header>
 
-  <a routerLink="/mandi-all">Mandi</a>
+  <div class="container">
+    <div class="player">
+      <ion-button (click)="playStop()" fill="clear">
+        <ion-icon
+          slot="icon-only"
+          *ngIf="!isPlaying"
+          name="play-outline"
+        ></ion-icon>
+        <ion-icon
+          slot="icon-only"
+          *ngIf="isPlaying"
+          name="pause-outline"
+        ></ion-icon>
+      </ion-button>
+    </div>
+  </div>
 </ion-content>

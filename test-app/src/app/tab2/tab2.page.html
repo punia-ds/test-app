@@ -61,15 +61,21 @@
           /> -->
         </ion-col>
         <ion-col size="9">
-          <ion-label>Name : {{donor.name | titlecase}}</ion-label>
-          <ion-label>Address : {{donor.address | titlecase}}</ion-label>
+          <ion-label
+            >{{'app.DONATION.DONORS.NAME' | translate}} : {{donor.name |
+            titlecase}}</ion-label
+          >
+          <ion-label
+            >{{'app.DONATION.DONORS.ADDRESS' | translate}} : {{donor.address |
+            titlecase}}</ion-label
+          >
           <ion-button
             (click)="openView(donor)"
             expand="block"
             style="margin-top: 12px; font-size: 15px"
           >
             <ion-icon slot="icon-only" name="eye-outline"></ion-icon> &nbsp;
-            View
+            {{'app.DONATION.DONORS.VIEW' | translate}}
           </ion-button>
         </ion-col>
       </ion-row>
