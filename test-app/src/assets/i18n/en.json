@@ -13,6 +13,36 @@
       "DONATION": "Donation",
       "MORE": "More"
     },
+    "REQUEST": {
+      "TITLE": "Farmaish",
+      "EMPTY": "No data found",
+      "ADD": {
+        "TITLE": "Add Request",
+        "SUCCESS": "Request added successfully",
+        "ERROR": "Something Wrong!",
+        "FIELDS": {
+          "NAME": "Name",
+          "SONG": "Request",
+          "MOBILE": "Mobile",
+          "ADDRESS": "Address",
+          "BUTTON": "Send Request"
+        },
+        "VALIDATIONS": {
+          "NAME": "Please Enter Name",
+          "SONG": "Please Enter Song",
+          "MOBILE": "Please Enter Mobile",
+          "ADDRESS": "Please Enter Address"
+        }
+      },
+      "VIEW": {
+        "NAME": "Name",
+        "SONG": "Request",
+        "MOBILE": "Mobile",
+        "ADDRESS": "Address",
+        "TIME": "Plays At"
+      }
+    },
+
     "HOME": {
       "TITLE": "English",
       "DESCRIPTION": "This is the English version of the website. If you",
