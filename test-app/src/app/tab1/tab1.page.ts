@@ -141,4 +141,10 @@ export class Tab1Page implements OnInit, AfterContentInit {
       this.seconds = 0;
     }
   }
+
+  // icons url
+  iconPath(icon: string) {
+    let path = '../../assets/images/gif/' + icon + '.gif';
+    return path;
+  }
 }

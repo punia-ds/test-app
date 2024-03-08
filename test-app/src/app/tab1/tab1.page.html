@@ -30,13 +30,13 @@
       <ion-grid>
         <ion-row class="top-row">
           <ion-col>
-            <ion-card>
+            <ion-card routerLink="/requests">
               <ion-card-content class="card-content">
                 <div class="icon">
-                  <ion-icon slot="start" name="document"></ion-icon>
+                  <img [src]="iconPath('clock')" alt="Request Icon" />
                 </div>
                 <div class="title">
-                  <h3>Request</h3>
+                  <h3>{{'app.HOME.MENUS.REQUEST' | translate}}</h3>
                 </div>
               </ion-card-content>
             </ion-card>
@@ -45,10 +45,10 @@
             <ion-card>
               <ion-card-content class="card-content">
                 <div class="icon">
-                  <ion-icon slot="start" name="happy"></ion-icon>
+                  <img [src]="iconPath('smile')" alt="Jokes Icon" />
                 </div>
                 <div class="title">
-                  <h3>Jokes</h3>
+                  <h3>{{'app.HOME.MENUS.JOKES' | translate}}</h3>
                 </div>
               </ion-card-content>
             </ion-card>
@@ -57,10 +57,10 @@
             <ion-card>
               <ion-card-content class="card-content">
                 <div class="icon">
-                  <ion-icon slot="start" name="book"></ion-icon>
+                  <img [src]="iconPath('document')" alt="History Icon" />
                 </div>
                 <div class="title">
-                  <h3>History</h3>
+                  <h3>{{'app.HOME.MENUS.HISTORY' | translate}}</h3>
                 </div>
               </ion-card-content>
             </ion-card>
@@ -68,27 +68,15 @@
         </ion-row>
       </ion-grid>
       <ion-grid>
-        <ion-row>
+        <ion-row class="top-row">
           <ion-col>
             <ion-card>
               <ion-card-content class="card-content">
                 <div class="icon">
-                  <ion-icon slot="start" name="add"></ion-icon>
+                  <img [src]="iconPath('program')" alt="Programs" />
                 </div>
                 <div class="title">
-                  <h3>Hello</h3>
-                </div>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col>
-            <ion-card>
-              <ion-card-content class="card-content">
-                <div class="icon">
-                  <ion-icon slot="start" name="add"></ion-icon>
-                </div>
-                <div class="title">
-                  <h3>Hello</h3>
+                  <h3>{{'app.HOME.MENUS.PROGRAMS' | translate}}</h3>
                 </div>
               </ion-card-content>
             </ion-card>

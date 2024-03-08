@@ -16,6 +16,12 @@
     "HOME": {
       "TITLE": "हिंदी",
       "DESCRIPTION": "यह हिंदी वेबसाइट में है. यदि",
+      "MENUS": {
+        "REQUEST": "फरमाइश",
+        "JOKES": "चुटकुले",
+        "HISTORY": "इतिहास",
+        "PROGRAMS": "कार्यक्रम"
+      },
       "RADIO": {
         "LOADING": "लोड हो रहा है...",
         "ERROR": "त्रुटि",

@@ -16,6 +16,12 @@
     "HOME": {
       "TITLE": "English",
       "DESCRIPTION": "This is the English version of the website. If you",
+      "MENUS": {
+        "REQUEST": "Farmaish",
+        "JOKES": "Jokes",
+        "HISTORY": "History",
+        "PROGRAMS": "Programs"
+      },
       "RADIO": {
         "LOADING": "Loading...",
         "ERROR": "Error",
