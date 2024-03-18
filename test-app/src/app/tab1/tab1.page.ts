@@ -9,6 +9,7 @@ import { LoadingService } from '../services/loading.service';
 import { SeoService } from '../services/seo.service';
 import { interval, takeWhile } from 'rxjs';
 import { SongService } from '../services/song.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -25,7 +26,8 @@ export class Tab1Page implements OnInit, AfterContentInit {
     private loadingSer: LoadingService,
     private translate: TranslateService,
     private seoService: SeoService,
-    private songSer: SongService
+    private songSer: SongService,
+    private router: Router
   ) {
     this.appSer.appDetails$.subscribe((res) => {
       this.app = res;
@@ -140,6 +142,10 @@ export class Tab1Page implements OnInit, AfterContentInit {
       this.minutes = 0;
       this.seconds = 0;
     }
+  }
+
+  goToPage(url: string) {
+    this.router.navigateByUrl(`${url}`);
   }
 
   // icons url

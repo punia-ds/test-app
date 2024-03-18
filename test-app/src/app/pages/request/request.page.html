@@ -11,13 +11,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list *ngIf="requests.length > 0">
+  <ion-list *ngIf="requests?.length > 0">
     <ion-item *ngFor="let request of requests" (click)="viewRequest(request)">
       <ion-icon slot="start" name="document-text-outline"></ion-icon>
       <ion-label>{{request.song}}</ion-label>
     </ion-item>
   </ion-list>
-  <div class="container" *ngIf="requests.length==0">
+  <div class="container" *ngIf="requests?.length==0">
     <h2>{{'app.REQUEST.EMPTY' | translate}}</h2>
   </div>
 </ion-content>

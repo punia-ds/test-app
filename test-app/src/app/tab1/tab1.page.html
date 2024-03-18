@@ -30,7 +30,7 @@
       <ion-grid>
         <ion-row class="top-row">
           <ion-col>
-            <ion-card routerLink="/requests">
+            <ion-card (click)="goToPage('/radio/requests')">
               <ion-card-content class="card-content">
                 <div class="icon">
                   <img [src]="iconPath('clock')" alt="Request Icon" />

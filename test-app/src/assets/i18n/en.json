@@ -35,6 +35,7 @@
         }
       },
       "VIEW": {
+        "TITLE": "View Request",
         "NAME": "Name",
         "SONG": "Request",
         "MOBILE": "Mobile",
