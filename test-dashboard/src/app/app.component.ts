@@ -30,6 +30,12 @@ export class AppComponent implements OnInit {
       path: 'categories',
     },
     {
+      title: 'Posts',
+      url: '/dashboard/posts',
+      icon: 'newspaper',
+      path: 'posts',
+    },
+    {
       title: 'Requests',
       url: '/dashboard/requests',
       icon: 'headset',

@@ -1,0 +1,17 @@
+<div class="container">
+  <ion-item>
+    <ion-textarea
+      label="Floating label"
+      labelPlacement="floating"
+      placeholder="Enter text"
+      autoGrow="true"
+      name="description"
+      [(ngModel)]="description"
+    ></ion-textarea>
+  </ion-item>
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addPost()">
+      <ion-icon name="send-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>

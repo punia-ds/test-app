@@ -42,7 +42,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="goToPage('/radio/jokes')">
               <ion-card-content class="card-content">
                 <div class="icon">
                   <img [src]="iconPath('smile')" alt="Jokes Icon" />
@@ -54,7 +54,7 @@
             </ion-card>
           </ion-col>
           <ion-col>
-            <ion-card>
+            <ion-card (click)="goToPage('/radio/history')">
               <ion-card-content class="card-content">
                 <div class="icon">
                   <img [src]="iconPath('document')" alt="History Icon" />

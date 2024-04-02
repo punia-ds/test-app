@@ -1,13 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>jokes</ion-title>
+    <ion-title>{{'app.JOKES.TITLE' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">jokes</ion-title>
+      <ion-title size="large">{{'app.JOKES.TITLE' | translate}}</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- add button -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onClick()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- add button ends -->
 </ion-content>
