@@ -2,7 +2,7 @@
   "app": {
     "TITLE": "English",
     "SUBTITLE": "English Language",
-    "NODATA":"No Data Available",
+    "NODATA": "No Data Available",
     "ALERT": {
       "HEADER": "Info",
       "SUBHEADER": "",
@@ -100,10 +100,30 @@
     },
     "JOKES": {
       "title": "Jokes",
-      "NODATA":"No Data Available",
-      "SHARE":"Share",
-      "ADD":{
-        "DESCRIPTION":"Joke"
+      "NODATA": "No Data Available",
+      "SHARE": "Share",
+      "ADD": {
+        "DESCRIPTION": "Joke"
+      },
+      "LOGIN": {
+        "HEADER": "Please Fill Below Details",
+        "FORM": {
+          "NAME": "Enter Name",
+          "MOBILE": "Enter MOBILE"
+        },
+        "BUTTONS": {
+          "SUBMIT": "Submit",
+          "CANCEL": "Cancel"
+        }
+      }
+    },
+    "HISTORY": {
+      "title": "History",
+      "NODATA": "No Data Available",
+      "SHARE": "Share",
+      "ADD": {
+        "DESCRIPTION": "History",
+        "TITLE": "Title"
       },
       "LOGIN": {
         "HEADER": "Please Fill Below Details",

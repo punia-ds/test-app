@@ -18,7 +18,7 @@
         <ion-card-subtitle>{{joke.addedBy.name}} </ion-card-subtitle>
       </ion-card-header>
 
-      <ion-button fill="clear">{{'app.JOKES.SHARE' | translate}}</ion-button>
+      <ion-button (click)="share(joke)" fill="clear">{{'app.JOKES.SHARE' | translate}}</ion-button>
     </ion-card>
   </div>
   <div class="no-data" *ngIf="jokes?.length == 0">

@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Geolocation } from '@capacitor/geolocation';
 import { UserService } from 'src/app/services/user.service';
 import { JokeService } from 'src/app/services/joke.service';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-jokes',
@@ -34,6 +35,16 @@ export class JokesPage implements OnInit {
 
   jokeRes: any;
   jokes: any;
+
+  async share(joke: any) {
+    await Share.share({
+      title: 'See cool stuff',
+      text: 'Really awesome thing you need to see right meow',
+      url: 'http://ionicframework.com/',
+      dialogTitle: 'Share with buddies',
+    });
+  }
+
   getJokes() {
     this.jokeSer.getJokes().subscribe((res) => {
       this.jokeRes = res;
@@ -51,7 +62,7 @@ export class JokesPage implements OnInit {
     if (status.location !== 'granted') {
       const requestPermission = await Geolocation.requestPermissions();
       if (requestPermission.location !== 'granted') {
-        console.error('Location permission denied');
+        // console.error('Location permission denied');
         return; // Exit if permission denied
       }
     }
@@ -60,9 +71,9 @@ export class JokesPage implements OnInit {
       const position = await Geolocation.getCurrentPosition();
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
-      console.log('User location:', this.latitude, this.longitude);
+      // console.log('User location:', this.latitude, this.longitude);
     } catch (error) {
-      console.error('Error getting location:', error);
+      // console.error('Error getting location:', error);
     }
   }
 

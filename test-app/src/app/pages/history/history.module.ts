@@ -7,14 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { HistoryPageRoutingModule } from './history-routing.module';
 
 import { HistoryPage } from './history.page';
+import { AddComponent } from './add/add.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HistoryPageRoutingModule
+    HistoryPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [HistoryPage]
+  declarations: [HistoryPage, AddComponent],
 })
 export class HistoryPageModule {}

@@ -1,0 +1,26 @@
+<div class="container">
+  <ion-item>
+    <ion-input
+      label="{{ 'app.HISTORY.ADD.TITLE' | translate }}"
+      labelPlacement="floating"
+      placeholder="{{ 'app.HISTORY.ADD.TITLE' | translate }}"
+      name="title"
+      [(ngModel)]="title"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea
+      label="{{ 'app.HISTORY.ADD.DESCRIPTION' | translate }}"
+      labelPlacement="floating"
+      placeholder="{{ 'app.HISTORY.ADD.DESCRIPTION' | translate }}"
+      autoGrow="true"
+      name="description"
+      [(ngModel)]="description"
+    ></ion-textarea>
+  </ion-item>
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addPost()">
+      <ion-icon name="send-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
