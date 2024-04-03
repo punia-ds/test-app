@@ -8,6 +8,7 @@ import AppRoutes from "./app/route.js";
 import TeamRoutes from "./teams/route.js";
 import SocialRoutes from "./social/route.js";
 import postRoutes from "./posts/route.js";
+import AppUserRoutes from "./app-user/route.js";
 
 const apiRoutes = express.Router();
 
@@ -20,5 +21,6 @@ apiRoutes.use("/app", AppRoutes);
 apiRoutes.use("/team", TeamRoutes);
 apiRoutes.use("/post", postRoutes);
 apiRoutes.use("/social", SocialRoutes);
+apiRoutes.use("/client", AppUserRoutes);
 
 export default apiRoutes;

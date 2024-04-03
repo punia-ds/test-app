@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
 import { JokeService } from 'src/app/services/joke.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-add',
@@ -11,12 +13,18 @@ export class AddComponent implements OnInit {
   addForm!: FormGroup;
   user: any = localStorage.getItem('userId');
 
-  constructor(private fb: FormBuilder,private postSer:JokeService) {}
+  constructor(
+    private fb: FormBuilder,
+    private postSer: JokeService,
+    private modalController: ModalController,
+    private toastSer: ToastService
+  ) {}
 
   description: any = '';
 
   ngOnInit() {}
 
+  addRes: any;
   addPost() {
     let payload = {
       description: this.description,
@@ -27,6 +35,14 @@ export class AddComponent implements OnInit {
       addedBy: this.user,
     };
 
-    console.log(this.description);
+    this.postSer.addPost(payload).subscribe((res) => {
+      this.addRes = res;
+      if (this.addRes.status == 200) {
+        this.modalController.dismiss();
+        this.toastSer.showToast(this.addRes.message);
+      } else {
+        this.toastSer.showToast(this.addRes.message);
+      }
+    });
   }
 }

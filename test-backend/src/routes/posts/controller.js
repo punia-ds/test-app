@@ -3,10 +3,17 @@ import PostModel from "./model.js";
 
 async function addPost(req, res) {
   try {
-    const { title, description, category, image, tags, shortDescription } =
-      req.body;
+    const {
+      title,
+      description,
+      category,
+      image,
+      tags,
+      shortDescription,
+      addedBy,
+    } = req.body;
 
-    if (!title || !description || !category) {
+    if (!title || !description || !category || !addedBy) {
       return res.json({ status: 400, message: "All fields are required" });
     }
 
@@ -17,6 +24,7 @@ async function addPost(req, res) {
       image,
       tags,
       shortDescription,
+      addedBy,
     });
 
     await newPost.save();

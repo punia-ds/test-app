@@ -29,7 +29,7 @@ async function register(req, res) {
     });
 
     await appUser.save();
-    res.json({ status: 200, message: "App User Added" });
+    res.json({ status: 200, message: appUser._id });
   } catch (err) {
     res.json({ status: 500, message: err });
   }

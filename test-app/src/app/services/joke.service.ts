@@ -10,6 +10,10 @@ export class JokeService {
 
   constructor(private http: HttpClient) {}
 
+  addPost(data: any) {
+    return this.http.post(`${this.baseUrl}/post/add`, data);
+  }
+
   getJokes() {
     return this.http.get(`${this.baseUrl}/post/category/jokes`);
   }

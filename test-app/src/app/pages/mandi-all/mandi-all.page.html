@@ -13,7 +13,7 @@
       <ion-title size="large">{{'app.MANDI' | translate}} </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-list>
+  <ion-list *ngIf="data?.length > 0">
     <ion-item
       *ngFor="let market of markets"
       routerLink="/mandi-details/{{market.toLowerCase()}}"
@@ -21,4 +21,8 @@
       <ion-label>{{market | titlecase}}</ion-label>
     </ion-item>
   </ion-list>
+
+  <div class="no-data" *ngIf="data?.length == 0">
+    <h2>{{'app.NODATA' | translate}}</h2>
+  </div>
 </ion-content>

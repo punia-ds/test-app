@@ -2,6 +2,7 @@
   "app": {
     "TITLE": "हिंदी",
     "SUBTITLE": "हिंदी भाषा",
+    "NODATA": "कोई डेटा नहीं मिला!",
     "ALERT": {
       "HEADER": "जानकारी",
       "SUBHEADER": "",
@@ -97,7 +98,23 @@
       }
     },
     "JOKES": {
-      "TITLE": "चुटकुले"
+      "TITLE": "चुटकुले",
+      "NODATA": "कोई डाटा नहीं है",
+      "SHARE": "शेयर",
+      "ADD": {
+        "DESCRIPTION": "चुटकुला"
+      },
+      "LOGIN": {
+        "HEADER": "कृपया नीचे विवरण भरें",
+        "FORM": {
+          "NAME": "आपका नाम",
+          "MOBILE": "आपका फ़ोन"
+        },
+        "BUTTONS": {
+          "SUBMIT": "ठीक है",
+          "CANCEL": "रद्द करें"
+        }
+      }
     }
   }
 }
