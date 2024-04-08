@@ -23,42 +23,7 @@
     <ion-item *ngFor="let donor of donors | filter: search">
       <ion-row class="ion-align-items-center" style="width: 100%">
         <ion-col size="3">
-          <!-- <img
-            *ngIf="donor.b_group=='A+'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          /> -->
           <img class="img" [src]="imgUrl(donor.b_group)" />
-          <!-- <img
-            *ngIf="donor.b_group=='B+'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          />
-          <img
-            *ngIf="donor.b_group=='B-'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          />
-          <img
-            *ngIf="donor.b_group=='O+'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          />
-          <img
-            *ngIf="donor.b_group=='O-'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          />
-          <img
-            *ngIf="donor.b_group=='AB+'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          />
-          <img
-            *ngIf="donor.b_group=='AB-'"
-            class="img"
-            [src]="imgPath+'/a+.png'"
-          /> -->
         </ion-col>
         <ion-col size="9">
           <ion-label

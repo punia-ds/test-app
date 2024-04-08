@@ -4,3 +4,6 @@ data
 .env
 
 /test-backend/.env
+
+
+test-app/android/

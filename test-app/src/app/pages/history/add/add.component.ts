@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { JokeService } from 'src/app/services/joke.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class AddComponent implements OnInit {
     private fb: FormBuilder,
     private postSer: JokeService,
     private modalController: ModalController,
-    private toastSer: ToastService
+    private toastSer: ToastService,
+    private metaSer: MetaService
   ) {}
 
   title: any = '';
@@ -31,7 +33,7 @@ export class AddComponent implements OnInit {
       description: this.description,
       title: this.title,
       category: 'history',
-      tags: 'latest Haryanvi jokes, Haryanvi humor, 2024 comedy trends, Indian regional jokes, desi laughs, Haryana culture, local dialect fun, witty punchlines, humorous sayings, laughter therapy, cultural comedy',
+      tags: this.metaSer.generatePrefixedTags(this.title),
       shortDescription: this.description.slice(0, 80),
       addedBy: this.user,
     };

@@ -16,7 +16,7 @@
   <ion-list *ngIf="data?.length > 0">
     <ion-item
       *ngFor="let market of markets"
-      routerLink="/mandi-details/{{market.toLowerCase()}}"
+      routerLink="/radio/mandi-details/{{market.toLowerCase()}}"
     >
       <ion-label>{{market | titlecase}}</ion-label>
     </ion-item>
