@@ -5,7 +5,6 @@ async function registerDonor(req, res) {
   const {
     active,
     address,
-    age,
     area,
     b_group,
     description,
@@ -19,7 +18,6 @@ async function registerDonor(req, res) {
   if (
     !active ||
     !address ||
-    !age ||
     !area ||
     !b_group ||
     !description ||
@@ -35,7 +33,6 @@ async function registerDonor(req, res) {
   const newDonor = new DonorModel({
     active,
     address,
-    age,
     area,
     b_group,
     description,

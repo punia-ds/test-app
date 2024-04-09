@@ -11,8 +11,7 @@ const donorSchema = new mongoose.Schema(
       required: true,
     },
     age: {
-      type: String, // Assuming age is stored as a string in this format
-      required: true,
+      type: String,
     },
     area: {
       type: String,

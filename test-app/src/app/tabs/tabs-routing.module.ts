@@ -63,6 +63,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'add-donor',
+        loadChildren: () =>
+          import('../tab2/add-donor/add-donor.module').then(
+            (m) => m.AddDonorPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/radio/home',
         pathMatch: 'full',

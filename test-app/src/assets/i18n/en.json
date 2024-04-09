@@ -64,6 +64,7 @@
     "DONATION": {
       "TITLE": "Blood Donation",
       "DESCRIPTION": "Donation",
+      "SEARCH":"Search Information",
       "DONORS": {
         "NAME": "Name",
         "ADDRESS": "Address",
@@ -71,6 +72,17 @@
         "YEARS": "Years",
         "SHARE": "Share",
         "VIEW": "View"
+      },
+      "ADD": {
+        "TITLE": "Add Donor",
+        "FORM": {
+          "NAME": "Enter Name",
+          "ADDRESS": "Enter Address",
+          "DESCRIPTION": "Description about donator.",
+          "MOBILE": "Enter Mobile",
+          "AREA": "Enter Area",
+          "SUBMIT": "Submit"
+        }
       }
     },
     "MANDI": "Mandis",

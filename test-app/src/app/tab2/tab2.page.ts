@@ -5,7 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { SingleDonorComponent } from '../pages/single-donor/single-donor.component';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { TranslateService } from '@ngx-translate/core';
-import { AddComponent } from './add/add.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -19,7 +19,8 @@ export class Tab2Page implements OnInit {
     private donationService: DonationService, // private translate: TranslateService
     private loadingSer: LoadingService,
     private modalCtrl: ModalController,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -77,12 +78,7 @@ export class Tab2Page implements OnInit {
   };
 
   async presentModal() {
-    const modal = await this.modalCtrl.create({
-      component: AddComponent,
-      breakpoints: [0, 1],
-      initialBreakpoint: 1,
-    });
-    await modal.present();
+    this.router.navigate(['/radio/add-donor']);
   }
 
   imgUrl(b_group: string) {
