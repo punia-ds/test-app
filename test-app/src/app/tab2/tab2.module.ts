@@ -9,6 +9,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxSearchFilterModule } from 'ngx-search-filter';
 import { SingleDonorComponent } from '../pages/single-donor/single-donor.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { SingleDonorComponent } from '../pages/single-donor/single-donor.compone
     TranslateModule,
     NgxSearchFilterModule,
   ],
-  declarations: [Tab2Page, SingleDonorComponent],
+  declarations: [Tab2Page, SingleDonorComponent, AddComponent],
 })
 export class Tab2PageModule {}

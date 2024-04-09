@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { SingleDonorComponent } from '../pages/single-donor/single-donor.component';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { TranslateService } from '@ngx-translate/core';
+import { AddComponent } from './add/add.component';
 
 @Component({
   selector: 'app-tab2',
@@ -74,6 +75,15 @@ export class Tab2Page implements OnInit {
     // Can be set to the src of an image now
     console.log(image);
   };
+
+  async presentModal() {
+    const modal = await this.modalCtrl.create({
+      component: AddComponent,
+      breakpoints: [0, 1],
+      initialBreakpoint: 1,
+    });
+    await modal.present();
+  }
 
   imgUrl(b_group: string) {
     let group = b_group.toLowerCase();

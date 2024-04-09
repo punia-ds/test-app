@@ -56,6 +56,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'programs',
+        loadChildren: () =>
+          import('../pages/programs/programs.module').then(
+            (m) => m.ProgramsPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/radio/home',
         pathMatch: 'full',
