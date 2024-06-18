@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{'app.CONTACT.TITLE' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{'app.CONTACT.TITLE' | translate}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <ion-list>
+      <form (submit)="addContact()" [formGroup]="contactForm">
+        <ion-item>
+          <ion-input
+            label="{{'app.CONTACT.ADD.FORM.NAME.LABEL' | translate}}"
+            labelPlacement="floating"
+            placeholder="{{'app.CONTACT.ADD.FORM.NAME.PLACEHOLDER' | translate}}"
+            formControlName="name"
+          ></ion-input>
+        </ion-item>
+        <div *ngIf="name.touched && name.invalid">
+          <ion-text>Please Enter Name</ion-text>
+        </div>
+        <ion-item>
+          <ion-input
+            label="{{'app.CONTACT.ADD.FORM.MOBILE.LABEL' | translate}}"
+            labelPlacement="floating"
+            placeholder="{{'app.CONTACT.ADD.FORM.MOBILE.PLACEHOLDER' | translate}}"
+            formControlName="mobile"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="{{'app.CONTACT.ADD.FORM.EMAIL.LABEL' | translate}}"
+            labelPlacement="floating"
+            placeholder="{{'app.CONTACT.ADD.FORM.EMAIL.PLACEHOLDER' | translate}}"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+        <ion-item style="margin-bottom: 20px">
+          <ion-textarea
+            label="{{'app.CONTACT.ADD.FORM.MESSAGE.LABEL' | translate}}"
+            labelPlacement="floating"
+            formControlName="message"
+            placeholder="{{'app.CONTACT.ADD.FORM.MESSAGE.PLACEHOLDER' | translate}}"
+          ></ion-textarea>
+        </ion-item>
+        <ion-button type="submit" expand="block" shape="round">
+          {{'app.CONTACT.ADD.FORM.BUTTON.SUBMIT' | translate}}
+        </ion-button>
+      </form>
+    </ion-list>
+  </div>
+</ion-content>

@@ -70,6 +70,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'contact',
+        loadChildren: () =>
+          import('../pages/contact/contact.module').then(
+            (m) => m.ContactPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/radio/home',
         pathMatch: 'full',

@@ -164,6 +164,33 @@
           "CANCEL": "Cancel"
         }
       }
+    },
+    "CONTACT": {
+      "TITLE": "Contact",
+      "ADD": {
+        "NAME": {
+          "LABEL": "Name",
+          "PLACEHOLDER": "Enter Name"
+        },
+        "MOBILE": {
+          "LABEL": "Mobile",
+          "PLACEHOLDER": "Enter Mobile"
+        },
+        "EMAIL": {
+          "LABEL": "Email",
+          "PLACEHOLDER": "Enter Email"
+        },
+        "MESSAGE": {
+          "LABEL": "Message",
+          "PLACEHOLDER": "Enter Message"
+        },
+        "BUTTON": {
+          "SUBMIT": "Submit",
+          "CANCEL": "Cancel"
+        }
+      },
+      "SUCCESS": "Donor Added Successfully",
+      "ERROR": "Something Wrong!"
     }
   }
 }

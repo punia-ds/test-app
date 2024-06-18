@@ -120,7 +120,7 @@
         "DESCRIPTION": "हमें लगता है"
       },
       "CONTACT": {
-        "TITLE": "Contact",
+        "TITLE": "संपर्क",
         "EMAIL": "हमें ईमेल पर लिखें",
         "FORM": "संपर्क पृष्ठ पर लिखें"
       }
@@ -162,6 +162,36 @@
           "SUBMIT": "ठीक है",
           "CANCEL": "रद्द करें"
         }
+      }
+    },
+    "CONTACT": {
+      "TITLE": "संपर्क",
+      "ADD": {
+        "TITLE": "संपर्क",
+        "FORM": {
+          "NAME": {
+            "LABEL": "नाम",
+            "PLACEHOLDER": "नाम डालें"
+          },
+          "MOBILE": {
+            "LABEL": "मोबाइल",
+            "PLACEHOLDER": "मोबाइल डालें"
+          },
+          "EMAIL": {
+            "LABEL": "ईमेल",
+            "PLACEHOLDER": "ईमेल डालें"
+          },
+          "MESSAGE": {
+            "LABEL": "संदेश",
+            "PLACEHOLDER": "संदेश ��ालें"
+          },
+          "BUTTON": {
+            "SUBMIT": "ठीक है",
+            "CANCEL": "रद्द करें"
+          }
+        },
+        "SUCCESS": "प्रवेश सफलतापूर्वक जोड़ा गया",
+        "ERROR": "त्रुटि"
       }
     }
   }
