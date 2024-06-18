@@ -13,6 +13,6 @@ export class DonationService {
   }
 
   addDonor(data: any) {
-    return this.http.post(`${environment.baseUrl}/donor/add`, data);
+    return this.http.post(`${environment.baseUrl}/donor/register`, data);
   }
 }

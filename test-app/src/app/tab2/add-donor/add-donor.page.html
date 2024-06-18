@@ -1,32 +1,98 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>{{ "app.DONATION.ADD.TITLE" | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large"
-        >{{ "app.DONATION.ADD.TITLE" | translate }}</ion-title
-      >
-    </ion-toolbar>
-  </ion-header>
-
   <div class="container">
     <form [formGroup]="registerForm" (submit)="register()">
       <ion-item>
         <ion-label position="floating"
-          >{{ "app.DONATION.ADD.FORM.NAME" | translate }}</ion-label
+          >{{ "app.DONATION.ADD.FORM.NAME" | translate }}*</ion-label
         >
         <ion-input formControlName="name" type="text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating"
-          >{{ "app.DONATION.ADD.FORM.MOBILE" | translate }}</ion-label
+          >{{ "app.DONATION.ADD.FORM.MOBILE" | translate }}*</ion-label
         >
         <ion-input formControlName="mobile" type="number"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-select
+          label="{{ 'app.DONATION.ADD.FORM.GROUP' | translate }}"
+          placeholder="{{ 'app.DONATION.ADD.FORM.GROUP' | translate }}"
+          okText="{{ 'app.DONATION.ADD.FORM.OK' | translate }}"
+          cancelText="{{ 'app.DONATION.ADD.FORM.CANCEL' | translate }}"
+          formControlName="b_group"
+        >
+          <ion-select-option *ngFor="let group of groups" [value]="group"
+            >{{group}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date Of Birth</ion-label>
+        <ion-datetime-button
+          datetime="datetime"
+          id="fake-click"
+        ></ion-datetime-button>
+        <ion-modal
+          [keepContentsMounted]="true"
+          [isOpen]="showCalendar"
+          (didDismiss)="cancelCalendar()"
+        >
+          <ng-template>
+            <ion-datetime
+              [locale]="lang"
+              (ionChange)="changeDate($event)"
+              id="datetime"
+              presentation="date"
+              [max]="minDate.format('YYYY-MM-DD')"
+              [showDefaultButtons]="true"
+              doneText="{{ 'app.DONATION.ADD.FORM.OK' | translate }}"
+              cancelText="{{ 'app.DONATION.ADD.FORM.CANCEL' | translate }}"
+              formControlName="dob"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"
+          >{{ "app.DONATION.ADD.FORM.ADDRESS" | translate }}*</ion-label
+        >
+        <ion-input formControlName="address" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"
+          >{{ "app.DONATION.ADD.FORM.AREA" | translate }}*</ion-label
+        >
+        <ion-textarea [autoGrow]="true" formControlName="area"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"
+          >{{ "app.DONATION.ADD.FORM.DESCRIPTION" | translate }}</ion-label
+        >
+        <ion-textarea
+          [autoGrow]="true"
+          formControlName="description"
+        ></ion-textarea>
+      </ion-item>
+      <ion-button
+        *ngIf="isEvent"
+        [disabled]="registerForm.invalid"
+        class="submit"
+        type="submit"
+        expand="block"
+        shape="round"
+      >
+        {{ 'app.DONATION.ADD.FORM.SUBMIT' | translate }}
+      </ion-button>
     </form>
   </div>
 </ion-content>

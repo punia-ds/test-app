@@ -64,7 +64,7 @@
     "DONATION": {
       "TITLE": "Blood Donation",
       "DESCRIPTION": "Donation",
-      "SEARCH":"Search Information",
+      "SEARCH": "Search Information",
       "DONORS": {
         "NAME": "Name",
         "ADDRESS": "Address",
@@ -73,11 +73,18 @@
         "SHARE": "Share",
         "VIEW": "View"
       },
+      "TOAST": {
+        "SUCCESS": "Donor Added Successfully",
+        "FAILED": "Failed to Add Donor"
+      },
       "ADD": {
         "TITLE": "Add Donor",
         "FORM": {
           "NAME": "Enter Name",
           "ADDRESS": "Enter Address",
+          "GROUP": "Choose Group",
+          "OK": "Ok",
+          "CANCEL": "Cancel",
           "DESCRIPTION": "Description about donator.",
           "MOBILE": "Enter Mobile",
           "AREA": "Enter Area",
@@ -108,6 +115,15 @@
             }
           ]
         }
+      },
+      "SOCIAL": {
+        "TITLE": "Social",
+        "DESCRIPTION": "Find Us"
+      },
+      "CONTACT": {
+        "TITLE": "Contact",
+        "EMAIL": "Write Us On Email",
+        "FORM": "Write On Contact Page"
       }
     },
     "JOKES": {

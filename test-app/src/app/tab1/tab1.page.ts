@@ -58,7 +58,7 @@ export class Tab1Page implements OnInit, AfterContentInit {
   getSongDetails() {
     this.songSer.getSong().subscribe((res) => {
       this.songRes = res;
-      this.song = this.songRes.icestats?.source.yp_currently_playing.replace(
+      this.song = this.songRes.icestats?.source[0].yp_currently_playing.replace(
         /YouTube/g,
         ''
       );

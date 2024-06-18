@@ -6,17 +6,21 @@
 
 <ion-content [fullscreen]="true" class="main-content">
   <div class="container">
+    <div class="message-backend">
+      <h2>{{app?.heading}}</h2>
+      <!-- <p>{{app?.description}}</p> -->
+    </div>
     <div class="player">
       <ion-button (click)="playStop()" fill="clear">
         <ion-icon
           slot="icon-only"
           *ngIf="!isPlaying"
-          name="play-outline"
+          name="play-circle-outline"
         ></ion-icon>
         <ion-icon
           slot="icon-only"
           *ngIf="isPlaying"
-          name="pause-outline"
+          name="pause-circle-outline"
         ></ion-icon>
       </ion-button>
       <marquee loop="infinite" *ngIf="isPlaying"><h3>{{song}}</h3></marquee>
